@@ -87,7 +87,7 @@ button {
 
 .content {
     border-radius: 50px;
-    /* background-color: red; */
+    max-width: 340px;
 }
 
 /* Ajustar conforme tamanho das telas */

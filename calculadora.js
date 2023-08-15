@@ -27,6 +27,10 @@ function zerarDisplay() {
     display.textContent = "0";
 }
 
+function exibirErro() {
+    display.textContent = "Error";
+}
+
 function cancelarOperacao() {
     valorAnterior = "";
     valorAtual = "";
@@ -35,17 +39,28 @@ function cancelarOperacao() {
 }
 
 function calcular() {
-    if (operadorAtual == "+") {
-        valorAtual = parseFloat(valorAtual) + parseFloat(valorAnterior);
-        atualizarDisplay();
-    } else if (operadorAtual == "-") {
-        valorAtual = parseFloat(valorAnterior) - parseFloat(valorAtual);
-        atualizarDisplay();
-    } else if (operadorAtual == "*") {
-        valorAtual = parseFloat(valorAtual) * parseFloat(valorAnterior);
-        atualizarDisplay();
-    } else if (operadorAtual == "/") {
-        valorAtual = parseFloat(valorAnterior) / parseFloat(valorAtual);
-        atualizarDisplay();
+    console.log("operadorAtual: " + operadorAtual);
+    console.log("valorAtual: " + valorAtual);
+    console.log("valorAnterior: " + valorAnterior);
+
+    if (valorAtual != "" && valorAnterior != "" && operadorAtual != ""){
+        if (operadorAtual == "+") {
+            valorAtual = parseFloat(valorAtual) + parseFloat(valorAnterior);
+            atualizarDisplay();
+        } else if (operadorAtual == "-") {
+            valorAtual = parseFloat(valorAnterior) - parseFloat(valorAtual);
+            atualizarDisplay();
+        } else if (operadorAtual == "*") {
+            valorAtual = parseFloat(valorAtual) * parseFloat(valorAnterior);
+            atualizarDisplay();
+        } else if (operadorAtual == "/") {
+            if (valorAtual != '0'){
+                valorAtual = parseFloat(valorAnterior) / parseFloat(valorAtual);
+                atualizarDisplay();
+            } else {
+                valorAtual = '';
+                exibirErro();
+            }
+        }
     }
 }
