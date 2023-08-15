@@ -12,30 +12,31 @@
 <body>
     <div class="content">
         <div class="result">
-            <span>123</span>
+            <span id="valorAtual">0</span>
         </div>
         <div class="buttons">
-            <div class="button grey">C</div>
-            <div class="button grey">+/-</div>
+            <div class="button grey" onclick="cancelarOperacao()">C</div>
+            <div class="button grey" onclick="inverterSinal()">+/-</div>
             <div class="button grey">%</div>
-            <div class="button grey">/</div>
-            <div class="button">7</div>
-            <div class="button">8</div>
-            <div class="button">9</div>
-            <div class="button orange">X</div>
-            <div class="button">4</div>
-            <div class="button">5</div>
-            <div class="button">6</div>
-            <div class="button orange">-</div>
-            <div class="button">1</div>
-            <div class="button">2</div>
-            <div class="button">3</div>
-            <div class="button orange">+</div>
-            <div class="button">0</div>
-            <div class="button">0</div>
-            <div class="button">.</div>
-            <div class="button orange">=</div>
+            <div class="button grey" onclick="adicionarOperacao('/')">/</div>
+            <div class="button" onclick="concatenar(7)">7</div>
+            <div class="button" onclick="concatenar(8)">8</div>
+            <div class="button" onclick="concatenar(9)">9</div>
+            <div class="button orange" onclick="adicionarOperacao('*')">X</div>
+            <div class="button" onclick="concatenar(4)">4</div>
+            <div class="button" onclick="concatenar(5)">5</div>
+            <div class="button" onclick="concatenar(6)">6</div>
+            <div class="button orange" onclick="adicionarOperacao('-')">-</div>
+            <div class="button" onclick="concatenar(1)">1</div>
+            <div class="button" onclick="concatenar(2)">2</div>
+            <div class="button" onclick="concatenar(3)">3</div>
+            <div class="button orange" onclick="adicionarOperacao('+')">+</div>
+            <div class="button" onclick="concatenar(0)">0</div>
+            <div class="button" onclick="concatenar(0)">0</div>
+            <div class="button" onclick="concatenar('.')">.</div>
+            <div class="button orange" onclick="calcular()">=</div>
         </div>
     </div>
 </body>
+<script src="calculadora.js"></script>
 </html>

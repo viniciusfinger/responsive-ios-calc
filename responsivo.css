@@ -67,11 +67,11 @@ button {
 
 .result {
     display: flex;
-    margin-top: 20%;
     margin-bottom: 20px;
     font: normal 4rem serif;
     color: white;
-    justify-content: flex-end;  
+    justify-content: flex-end;
+    overflow: hidden;
 }
 
 .buttons {
@@ -81,6 +81,5 @@ button {
 }
 
 .content {
-    margin: 50px;
-    max-width: 400px;
+    max-width: 340px;
 }
