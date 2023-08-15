@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+}
+
+&::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Fim do CSS reset */
+
+body { 
+    background-color: white;
+    padding-top: 30px;
+}
+
+.calculadora {
+    width: 400px;
+    margin: 0 auto;
+    background-color: black;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.resultado {
+    display: flex;
+    font: normal 4rem serif;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 70px;
+}
+
+.botoes .laranja {
+    background-color: orange;
+}
+
+.botoes .cinza-claro {
+    background-color: #a6a6a6;
+    color: black;
+}
+
+.botoes button {
+    background-color: rgba(51,51,51,255);
+    color: white;
+    padding: 25px;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    outline: none;
+    cursor: pointer;
+}
+

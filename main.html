@@ -5,36 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>iOS calc</title>
 </head>
 
 <body>
     <div class="calculadora">
         <div class="resultado">
-
+            <span id="valorAtual">0</span>
         </div>
         <div class="botoes">
-            <button>C</button>
-            <button>+/-</button>
-            <button>%</button>
-            <button>/</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>X</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
+            <button class="cinza-claro" onclick="cancelarOperacao()">C</button>
+            <button class="cinza-claro" onclick="inverterSinal()">+/-</button>
+            <button class="cinza-claro">%</button>
+            <button class="laranja" onclick="adicionarOperacao('/')">/</button>
+            <button onclick="concatenar(7)">7</button>
+            <button onclick="concatenar(8)">8</button>
+            <button onclick="concatenar(9)">9</button>
+            <button class="laranja" onclick="adicionarOperacao('*')">X</button>
+            <button onclick="concatenar(4)">4</button>
+            <button onclick="concatenar(5)">5</button>
+            <button onclick="concatenar(6)">6</button>
+            <button class="laranja" onclick="adicionarOperacao('-')">-</button>
+            <button onclick="concatenar(1)">1</button>
+            <button onclick="concatenar(2)">2</button>
+            <button onclick="concatenar(3)">3</button>
+            <button class="laranja" onclick="adicionarOperacao('+')">+</button>
+            <button onclick="concatenar(0)">0</button>
             <button>0</button>
-            <button>0</button>
-            <button>.</button>
-            <button>=</button>
+            <button onclick="concatenar('.')">.</button>
+            <button class="laranja" onclick="calcular()">=</button>
         </div>
     </div>
+
+    <script>
+        let valorAtual = "";
+        let operadorAtual = "";
+        let valorAnterior = "";
+        const display = document.getElementById("valorAtual");
+
+        function inverterSinal(){
+            valorAtual = valorAtual * -1;
+            atualizarDisplay();
+        }
+
+        function concatenar(valor){
+            valorAtual += valor;
+            atualizarDisplay();
+        }
+
+        function adicionarOperacao(operacao){
+            operadorAtual = operacao;
+            valorAnterior = valorAtual;
+            valorAtual = "";
+        }
+
+        function atualizarDisplay(){
+            display.textContent = valorAtual;
+        }
+
+        function zerarDisplay(){
+            display.textContent = "0";
+        }
+
+        function cancelarOperacao(){
+            valorAnterior = "";
+            valorAtual = "";
+            valorAnterior = "";
+            zerarDisplay();
+        }
+
+        function calcular(){
+            if (operadorAtual == "+"){
+                valorAtual = parseFloat(valorAtual) + parseFloat(valorAnterior);
+                atualizarDisplay();
+            } else if (operadorAtual == "-"){            
+                valorAtual = parseFloat(valorAnterior) - parseFloat(valorAtual);
+                atualizarDisplay();
+            } else if (operadorAtual == "*"){
+                valorAtual = parseFloat(valorAtual) * parseFloat(valorAnterior);
+                atualizarDisplay();
+            } else if (operadorAtual == "/"){ //TO-DO: VERIFICAR SE A ORDEM ESTÁ CERTA
+                valorAtual = parseFloat(valorAnterior) / parseFloat(valorAtual);
+                atualizarDisplay();
+            }
+        }
+    </script>
+
 </body>
 </html>

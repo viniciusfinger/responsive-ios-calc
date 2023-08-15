@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+}
+
+&::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+/* Fim do CSS reset */
+.button {
+    background-color: rgba(51,51,51,255);
+    color: white;
+    padding: 40px;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    outline: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons .orange {
+    background-color: orange;
+}
+
+.buttons .grey {
+    background-color: #a6a6a6;
+    color: black;
+}
+
+.result {
+    display: flex;
+    margin-top: 20%;
+    margin-bottom: 20px;
+    font: normal 4rem serif;
+    color: white;
+    justify-content: flex-end;  
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.content {
+    margin: 50px;
+    max-width: 400px;
+}
