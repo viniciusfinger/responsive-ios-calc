@@ -44,9 +44,9 @@ button {
 .button {
     background-color: rgba(51,51,51,255);
     color: white;
-    padding: 40px;
+    padding: 5vh;
     border-radius: 100%;
-    font-size: 1.5rem;
+    font-size: 4vh;
     outline: none;
     cursor: pointer;
     width: 20px;
@@ -65,12 +65,16 @@ button {
     color: black;
 }
 
+.button img {
+    width: 6vh;
+    margin-top: 1vh;
+}
+
 .result {
     display: flex;
-    margin-bottom: 20px;
-    font: normal 4rem serif;
+    font: normal 10vh serif;
     color: white;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
     overflow: hidden;
 }
 
@@ -81,5 +85,10 @@ button {
 }
 
 .content {
-    max-width: 340px;
+    padding: 20px;
+    border-radius: 50px;
+    /* background-color: red; */
 }
+
+/* Ajustar conforme tamanho das telas */
+/*RESOLVER O BUG DO NUMERO DO RESULTADO ALTERANDO O TAMANHO DO CONTENT USANDO O MAX WIDTH TELA POR TELA */
